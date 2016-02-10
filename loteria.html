@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+
+<input type="text" id="number"/>
+<input type="submit" id="comparar" value="Comparar!"/>
+
+<script>
+var segredos = [3,17,21,22,46,60];
+
+var caixaDeTexto = document.getElementById("number");
+var botaoComparar = document.getElementById("comparar");
+botaoComparar.onclick = botaoClicado;
+
+function botaoClicado(){
+    for(i=0;i<segredos.length;i++){
+        if(segredos[i]==caixaDeTexto.value){
+            x = i + 1
+            document.write("Parabéns! Você acertou o " + x + "º número.");
+            return;
+        }
+    }
+    document.write("Infelizmente você errou.")
+}
+</script>
