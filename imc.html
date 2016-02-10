@@ -25,9 +25,7 @@ if(imc < 18.5){
 if(imc > 35){
     mostra("Seu IMC indica que você esta acima do peso ideal.");
 }
-if(imc > 18.5){
-    if(imc < 35){
-        mostra("Seu IMC indica que você está dentro do peso ideal.");
-    }
+if(imc >= 18.5 && imc <= 35){
+    mostra("Seu IMC indica que você está dentro do peso ideal.");
 }
 </script>
