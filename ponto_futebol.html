@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script>
+// Funções a serem utilizadas.
+function pulaLinha(){
+    document.write("<br>");
+};
+function mostra(string){
+    document.write(string);
+    pulaLinha();
+};
+function calculo(a,b,c){
+    return (a*3)+b-c;
+};
+
+// Seção de perguntas ao usuario + conversão string > integer.
+var vitorias = prompt("Quantos jogos o Bones F.C. venceu?");
+var empates = prompt("Quantos jogos o Bones F.C. empatou?");
+var empates = parseInt(empates);
+var derrotas = prompt("Quantas jogos o Bones F.C. perdeu?");
+var derrotas = parseInt(derrotas);
+var vitoriasRival = prompt("Quantas vitórias teve nosso rival?");
+var empatesRival = prompt("Quantos empates teve nosso rival?");
+var empatesRival = parseInt(empatesRival);
+var derrotasRival = prompt("Quantas derrotas teve nosso rival?");
+var derrotasRival = parseInt(derrotasRival);
+
+// Calculando os pontos de cada time.
+pontosBFC = calculo(vitorias,empates,derrotas);
+pontosRival = calculo(vitoriasRival,empatesRival,derrotasRival);
+
+// Comparando os times.
+if(pontosBFC>pontosRival){
+    mostra("Nosso time está melhor que o rival.");
+}
+if(pontosBFC<pontosRival){
+    mostra("Nosso time está pior que o rival.");
+}
+if(pontosBFC==pontosRival){
+    mostra("Estamos empatados com o rival.");
+}
+</script>
