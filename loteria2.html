@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+
+<h2>Adicione seus números de aposta. 1 à 60 </h2>
+<input type="text" id="numUsuario1"/><br>
+<input type="text" id="numUsuario2"/><br>
+<input type="text" id="numUsuario3"/><br>
+<input type="text" id="numUsuario4"/><br>
+<input type="text" id="numUsuario5"/><br>
+<input type="text" id="numUsuario6"/><br>
+<input type="submit" id="botaoUsuario" value="Adicionar número à aposta."/>
+
+<script>
+// Seção que realiza o sorteio dos números da loteria.
+var i=0;
+var limite = 60;
+var sorteados = new Array(limite);
+for(i=1;i<61;i++){
+    sorteados[i]=i;
+};
+sorteados.sort(function(a,b){ return (Math.round(Math.random())-0.5); });
+
+// Seleção dos 6 primeiros números sorteados.
+var loteria = [];
+for(x=0;x<6;x++){
+    loteria[x] = sorteados[x];
+};
+
+// Seção de input.
+var usuario = []
+var caixaNumero1 = document.getElementById("numUsuario1");
+var caixaNumero2 = document.getElementById("numUsuario2");
+var caixaNumero3 = document.getElementById("numUsuario3");
+var caixaNumero4 = document.getElementById("numUsuario4");
+var caixaNumero5 = document.getElementById("numUsuario5");
+var caixaNumero6 = document.getElementById("numUsuario6");
+var botaoAdicionar = document.getElementById("botaoUsuario");
+botaoAdicionar.onclick = botaoClicado;
+
+// Convertendo os input para Integer e armazenando-os no array "usuario".
+function botaoClicado(){
+    usuario[0] = parseInt(caixaNumero1.value);
+    usuario[1] = parseInt(caixaNumero2.value);
+    usuario[2] = parseInt(caixaNumero3.value);
+    usuario[3] = parseInt(caixaNumero4.value);
+    usuario[4] = parseInt(caixaNumero5.value);
+    usuario[5] = parseInt(caixaNumero6.value);
+};
+
+// Falta fazer a comparação dos números.
+
+</script>
