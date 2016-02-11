@@ -13,7 +13,7 @@
 // Seção que realiza o sorteio dos números da loteria.
 var i=0;
 var limite = 60;
-var sorteados = new Array(limite);
+var sorteados = [];
 for(i=1;i<61;i++){
     sorteados[i]=i;
 };
@@ -24,9 +24,10 @@ var loteria = [];
 for(x=0;x<6;x++){
     loteria[x] = sorteados[x];
 };
+// Organizando os números em ordem crescente.
+loteria.sort(function(a,b){ return a-b });
 
 // Seção de input.
-var usuario = []
 var caixaNumero1 = document.getElementById("numUsuario1");
 var caixaNumero2 = document.getElementById("numUsuario2");
 var caixaNumero3 = document.getElementById("numUsuario3");
@@ -36,7 +37,9 @@ var caixaNumero6 = document.getElementById("numUsuario6");
 var botaoAdicionar = document.getElementById("botaoUsuario");
 botaoAdicionar.onclick = botaoClicado;
 
-// Convertendo os input para Integer e armazenando-os no array "usuario".
+// Armazenando, convertendo para Integer e ordenando de forma crescente
+// os números postos pelo usuario.
+var usuario = [];
 function botaoClicado(){
     usuario[0] = parseInt(caixaNumero1.value);
     usuario[1] = parseInt(caixaNumero2.value);
@@ -44,6 +47,7 @@ function botaoClicado(){
     usuario[3] = parseInt(caixaNumero4.value);
     usuario[4] = parseInt(caixaNumero5.value);
     usuario[5] = parseInt(caixaNumero6.value);
+    usuario.sort(function(a,b){ return a-b });
 };
 
 // Falta fazer a comparação dos números.
