@@ -13,6 +13,10 @@ function bola(x,y,r){
     c.arc(x,y,r,0,2*Math.PI);
     c.stroke();
 }
+function quadrado(x,y){
+    c.fillStyle="gray";
+    c.fillRect(x,y-x,15,15);
+};
 function limpaTela(){
     c.clearRect(0,0,600,400);
 };
@@ -21,6 +25,7 @@ var x=1;
 function desenha(){
 //    limpaTela();
     bola(x,100,x/2);
+    quadrado(x,400);
     x+=1;
 };
 setInterval(desenha, 18);
