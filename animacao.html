@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<canvas id="tela" width="600" height="400"></canvas>
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle="purple";
+c.fillRect(0,0,600,400);
+
+function bola(x,y,r){
+    c.strokeStyle="black";
+    c.beginPath();
+    c.arc(x,y,r,0,2*Math.PI);
+    c.stroke();
+}
+function limpaTela(){
+    c.clearRect(0,0,600,400);
+};
+var x=1;
+// Se quiser, pode ativar o limpaTela abaixo.
+function desenha(){
+//    limpaTela();
+    bola(x,100,x/2);
+    x+=1;
+};
+setInterval(desenha, 18);
+</script>
