@@ -1,2 +1,3 @@
-# logica_da_programacao
+**Logica da Programação** em **JavaScrips**
+
 Exercícios baseados no livro Lógica da Programação
